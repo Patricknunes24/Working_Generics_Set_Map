@@ -1,30 +1,14 @@
 package program;
+import model.intitites.Cliente;
 
-import model.services.PrintService;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         Scanner tec = new Scanner(System.in);
-
-        try {
-            System.out.println("Digite uma quantidade n :");
-            int n = tec.nextInt();
-            tec.nextLine();
-            PrintService<Integer> printService = new PrintService<Integer>();
-            for (int i = 0; i < n; i++) {
-                System.out.println("DIGITE UM VALOR: ");
-                Integer x = tec.nextInt();
-                printService.addValue(x);
-            }
-            System.out.println(printService.getIntegerList());
-        }
-        catch (IllegalStateException e){
-            e.getMessage();
-        }
+        Cliente c1 = new Cliente("patrick","patrick@gmail.com");
+        System.out.println(c1.hashCode());
+        Cliente c2 = new Cliente("patrick","thais@gmail.com");
+        System.out.println(c2.hashCode());
+        System.out.println(c1.equals(c2));
     }
 }
-
